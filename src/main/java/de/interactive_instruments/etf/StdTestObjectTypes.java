@@ -29,6 +29,7 @@ import de.interactive_instruments.etf.model.*;
  * Standard Test Object Types.
  * @author Jon Herrmann ( herrmann aT interactive-instruments doT de )
  * @author Clemens Portele ( portele aT interactive-instruments doT de )
+ * @author Thijs Brentjens ( t doT brentjens aT geonovum doT nl ), for NL models
  */
 public class StdTestObjectTypes {
 
@@ -134,6 +135,31 @@ public class StdTestObjectTypes {
 	private static final TestObjectTypeDto METADATA_RECORDS_TOT = new TestObjectTypeDto();
 	private static EID METADATA_RECORDS_ID = EidFactory.getDefault()
 			.createAndPreserveStr("5a60dded-0cb0-4977-9b06-16c6c2321d2e");
+
+	private static final TestObjectTypeDto NL_STUFIMGEO111_TOT = new TestObjectTypeDto();
+	private static EID NL_STUFIMGEO111_ID = EidFactory.getDefault()
+			.createAndPreserveStr("a7fb8a3d-c82d-48f0-a5c6-8f13efebefb1");
+
+	private static final TestObjectTypeDto NL_STUFIMGEO12_TOT = new TestObjectTypeDto();
+	private static EID NL_STUFIMGEO12_ID = EidFactory.getDefault()
+			.createAndPreserveStr("1b9cf8d4-85cc-4f30-9848-25cb33333b54");
+
+	private static final TestObjectTypeDto NL_STUFIMGEO13_TOT = new TestObjectTypeDto();
+	private static EID NL_STUFIMGEO13_ID = EidFactory.getDefault()
+			.createAndPreserveStr("14b4aa1d-6157-413d-8acc-f8a026d0d6dd");
+
+	private static final TestObjectTypeDto NL_GEOBAG10_TOT = new TestObjectTypeDto();
+	private static EID NL_GEOBAG10_ID = EidFactory.getDefault()
+			.createAndPreserveStr("500d136e-4fda-4a76-8998-bb1bfd07fa4b");
+
+	private static final TestObjectTypeDto NL_GEOBAG11_TOT = new TestObjectTypeDto();
+	private static EID NL_GEOBAG11_ID = EidFactory.getDefault()
+			.createAndPreserveStr("d5877f6d-740d-4765-b56d-21320e756944");
+
+	private static final TestObjectTypeDto NL_GEOBOR10_TOT = new TestObjectTypeDto();
+	private static EID NL_GEOBOR10_ID = EidFactory.getDefault()
+			.createAndPreserveStr("6d5155b2-9202-4d7d-8c7b-0c43bf1c0a63");
+
 
 	private static final String owsLabelExpression = "/*/*[local-name() = 'ServiceIdentification' or local-name() = 'Service' ][1]/*[local-name() = 'Title'][1]/text()";
 	private static final String owsDescriptionExpression = "(/*/*[local-name() = 'ServiceIdentification' or local-name() = 'Service'][1]/*[local-name() = 'Abstract'][1]/text())[1]";
@@ -466,6 +492,60 @@ public class StdTestObjectTypes {
 					CITYGML10_CITY_MODEL_TOT.setDetectionExpression("boolean(/*[local-name() = 'CityModel' and "
 							+ "namespace-uri() = 'http://www.opengis.net/citygml/1.0'])", ExpressionType.XPATH);
 					put(CITYGML10_CITY_MODEL_ID, CITYGML10_CITY_MODEL_TOT);
+				}
+				{
+				  NL_STUFIMGEO111_TOT.setLabel("StUF IMGeo 1.1.1 documents (NL)");
+				  NL_STUFIMGEO111_TOT.setId(NL_STUFIMGEO111_ID);
+				  NL_STUFIMGEO111_TOT.setParent(XML_DOCUMENTS_TOT);
+				  NL_STUFIMGEO111_TOT
+				      .setDescription("A set of XML documents. Each document contains a StUF IMGeo 1.1.1 XML document.");
+				  NL_STUFIMGEO111_TOT.setDetectionExpression("boolean(/*[namespace-uri() = 'http://www.geostandaarden.nl/imgeo/2.1/stuf-imgeo'])", ExpressionType.XPATH);
+				  put(NL_STUFIMGEO111_ID, NL_STUFIMGEO111_TOT);
+				}
+				{
+				  NL_STUFIMGEO12_TOT.setLabel("StUF IMGeo 1.2 documents (NL)");
+				  NL_STUFIMGEO12_TOT.setId(NL_STUFIMGEO12_ID);
+				  NL_STUFIMGEO12_TOT.setParent(XML_DOCUMENTS_TOT);
+				  NL_STUFIMGEO12_TOT
+				      .setDescription("A set of XML documents. Each document contains a StUF IMGeo 1.2 XML document.");
+				  NL_STUFIMGEO12_TOT.setDetectionExpression("boolean(/*[namespace-uri() = 'http://www.geostandaarden.nl/imgeo/2.1/stuf-imgeo/1.2'])", ExpressionType.XPATH);
+				  put(NL_STUFIMGEO12_ID, NL_STUFIMGEO12_TOT);
+				}
+				{
+					NL_STUFIMGEO13_TOT.setLabel("StUF IMGeo 1.3 documents (NL)");
+					NL_STUFIMGEO13_TOT.setId(NL_STUFIMGEO13_ID);
+					NL_STUFIMGEO13_TOT.setParent(XML_DOCUMENTS_TOT);
+					NL_STUFIMGEO13_TOT
+							.setDescription("A set of XML documents. Each document contains a StUF IMGeo 1.3 XML document.");
+					NL_STUFIMGEO13_TOT.setDetectionExpression("boolean(/*[namespace-uri() = 'http://www.geostandaarden.nl/imgeo/2.1/stuf-imgeo/1.3'])", ExpressionType.XPATH);
+					put(NL_STUFIMGEO13_ID, NL_STUFIMGEO13_TOT);
+				}
+				{
+				  NL_GEOBAG10_TOT.setLabel("GeoBAG 1.0 document (NL)");
+				  NL_GEOBAG10_TOT.setId(NL_GEOBAG10_ID);
+				  NL_GEOBAG10_TOT.setParent(XML_DOCUMENTS_TOT);
+				  NL_GEOBAG10_TOT
+				      .setDescription("A set of XML documents. Each document contains a GeoBAG 1.0 XML document.");
+				  NL_GEOBAG10_TOT.setDetectionExpression("boolean(/*[namespace-uri() = 'http://register.geostandaarden.nl/xmlschema/geobag/1.0'])", ExpressionType.XPATH);
+				  put(NL_GEOBAG10_ID, NL_GEOBAG10_TOT);
+				}
+				{
+				  NL_GEOBAG11_TOT.setLabel("GeoBAG 1.1 document (NL)");
+				  NL_GEOBAG11_TOT.setId(NL_GEOBAG11_ID);
+				  NL_GEOBAG11_TOT.setParent(XML_DOCUMENTS_TOT);
+				  NL_GEOBAG11_TOT
+				      .setDescription("A set of XML documents. Each document contains a GeoBAG 1.1 XML document.");
+				  NL_GEOBAG11_TOT.setDetectionExpression("boolean(/*[namespace-uri() = 'http://register.geostandaarden.nl/xmlschema/geobag/1.1'])", ExpressionType.XPATH);
+				  put(NL_GEOBAG11_ID, NL_GEOBAG11_TOT);
+				}
+				{
+				  NL_GEOBOR10_TOT.setLabel("GeoBOR 1.0 document (NL)");
+				  NL_GEOBOR10_TOT.setId(NL_GEOBOR10_ID);
+				  NL_GEOBOR10_TOT.setParent(XML_DOCUMENTS_TOT);
+				  NL_GEOBOR10_TOT
+				      .setDescription("A set of XML documents. Each document contains a GeoBOR 1.0 XML document.");
+				  NL_GEOBOR10_TOT.setDetectionExpression("boolean(/*[namespace-uri() = 'http://register.geostandaarden.nl/imgeo/2.1/geobor/1.0'])", ExpressionType.XPATH);
+				  put(NL_GEOBOR10_ID, NL_GEOBOR10_TOT);
 				}
 				{
 					METADATA_RECORDS_TOT.setLabel("Metadata records");
