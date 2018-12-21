@@ -132,6 +132,18 @@ public class StdTestObjectTypes {
 	private static EID CITYGML10_CITY_MODEL_ID = EidFactory.getDefault()
 			.createAndPreserveStr("d9371e42-2bf4-420c-84a5-4ab9055a8706");
 
+	private static final TestObjectTypeDto NL_IMRO2008_11_TOT = new TestObjectTypeDto();
+	private static EID NL_IMRO2008_11_ID = EidFactory.getDefault()
+	    .createAndPreserveStr("c62d729b-0171-4125-97b7-c85068a91522");
+
+	private static final TestObjectTypeDto NL_IMRO2012_10_TOT = new TestObjectTypeDto();
+	private static EID NL_IMRO2012_10_ID = EidFactory.getDefault()
+	    .createAndPreserveStr("ff7260f8-5fd1-46de-90f5-ca7a4aac73e6");
+
+	private static final TestObjectTypeDto NL_IMRO2012_11_TOT = new TestObjectTypeDto();
+	private static EID NL_IMRO2012_11_ID = EidFactory.getDefault()
+	    .createAndPreserveStr("0688ebb6-b6d0-4d1f-a547-ca7637602902");
+
 	private static final TestObjectTypeDto METADATA_RECORDS_TOT = new TestObjectTypeDto();
 	private static EID METADATA_RECORDS_ID = EidFactory.getDefault()
 			.createAndPreserveStr("5a60dded-0cb0-4977-9b06-16c6c2321d2e");
@@ -492,6 +504,33 @@ public class StdTestObjectTypes {
 					CITYGML10_CITY_MODEL_TOT.setDetectionExpression("boolean(/*[local-name() = 'CityModel' and "
 							+ "namespace-uri() = 'http://www.opengis.net/citygml/1.0'])", ExpressionType.XPATH);
 					put(CITYGML10_CITY_MODEL_ID, CITYGML10_CITY_MODEL_TOT);
+				}
+				{
+				  NL_IMRO2008_11_TOT.setLabel("IMRO 2008 1.1 GML documents (NL)");
+				  NL_IMRO2008_11_TOT.setId(NL_IMRO2008_11_ID);
+				  NL_IMRO2008_11_TOT.setParent(GML_FEATURE_COLLECTION_TOT);
+				  NL_IMRO2008_11_TOT
+				      .setDescription("A set of XML documents. Each document contains a IMRO 2008 GML document.");
+				  NL_IMRO2008_11_TOT.setDetectionExpression("boolean(/*[namespace-uri() = 'http://www.geonovum.nl/imro/2008/1'])", ExpressionType.XPATH);
+				  put(NL_IMRO2008_11_ID, NL_IMRO2008_11_TOT);
+				}
+				{
+				  NL_IMRO2012_10_TOT.setLabel("IMRO 2012 1.0 GML documents (NL)");
+				  NL_IMRO2012_10_TOT.setId(NL_IMRO2012_10_ID);
+				  NL_IMRO2012_10_TOT.setParent(GML_FEATURE_COLLECTION_TOT);
+				  NL_IMRO2012_10_TOT
+				      .setDescription("A set of XML documents. Each document contains a IMRO 2012 1.0 GML document.");
+				  NL_IMRO2012_10_TOT.setDetectionExpression("boolean(/*[namespace-uri() = 'http://www.geonovum.nl/imro/2012/1.0'])", ExpressionType.XPATH);
+				  put(NL_IMRO2012_10_ID, NL_IMRO2012_10_TOT);
+				}
+				{
+				  NL_IMRO2012_11_TOT.setLabel("IMRO 2012 1.1 GML documents (NL)");
+				  NL_IMRO2012_11_TOT.setId(NL_IMRO2012_11_ID);
+				  NL_IMRO2012_11_TOT.setParent(GML_FEATURE_COLLECTION_TOT);
+				  NL_IMRO2012_11_TOT
+				      .setDescription("A set of XML documents. Each document contains a IMRO 2012 1.1 GML document.");
+				  NL_IMRO2012_11_TOT.setDetectionExpression("boolean(/*[namespace-uri() = 'http://www.geonovum.nl/imro/2012/1.1'])", ExpressionType.XPATH);
+				  put(NL_IMRO2012_11_ID, NL_IMRO2012_11_TOT);
 				}
 				{
 				  NL_STUFIMGEO111_TOT.setLabel("StUF IMGeo 1.1.1 documents (NL)");

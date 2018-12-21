@@ -70,6 +70,43 @@ http://register.geostandaarden.nl/imgeo/2.1/geobor/1.0
 ```
 
 
+### IMRO 2008 1.1 GML
+
+EID:
+```
+EIDc62d729b-0171-4125-97b7-c85068a91522
+```
+
+Namespace root element:
+```
+http://www.geonovum.nl/imro/2008/1
+```
+
+### IMRO 2012 1.0 GML
+
+EID:
+```
+EIDff7260f8-5fd1-46de-90f5-ca7a4aac73e6
+```
+
+Namespace root element:
+```
+http://www.geonovum.nl/imro/2012/1.0
+```
+
+
+### IMRO 2002 1.1 GML
+
+EID:
+```
+EID0688ebb6-b6d0-4d1f-a547-ca7637602902
+```
+
+Namespace root element:
+```
+http://www.geonovum.nl/imro/2012/1.1
+```
+
 ## Building the library (and fixing building errors)
 To build the library:
 1. (try to) build the jar the first time (skip tests, due to an error in tests), in the root dir of the project: ```./gradlew jar -x test```
